@@ -94,8 +94,9 @@ void episode1_Apartment_Interrogation_Scene()
     if (choice == 1)
     {
         Is_Merciful = false;
-        delaySpeak("//------Drops Dead--------//");
-        typeLine("Robert: Stupid son of a bitch");
+        typeLine("Robert: Sir. If you want something to scream about, I'll give you something to scream about");
+        delaySpeak("//------Drops off from the ledge--------//");
+        typeLine("Robert: You piece of shit!");
     }
     else
     {
