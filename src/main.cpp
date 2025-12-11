@@ -36,7 +36,7 @@ void typeLine(const string &text, int speedMs = 40)
 }
 
 // delay dialogue
-void delaySpeak(const string &line, int delayMs = 900)
+void delaySpeak(const string &line, int delayMs = 1050)
 {
     cout << line << endl;
     this_thread::sleep_for(chrono::milliseconds(delayMs));
@@ -494,7 +494,7 @@ void street_fight()
     typeLine("Orange Ski: Well what nothing you have, you're about to fucking lose again");
     typeLine("Mecha man: whatever the case ");
     typeLine("Mecha man: I'm enough to deal with a pack of fucking skittles idiots like you");
-    delaySpeak("Mecha man:  PUNCH WITH RIGHT [1] PUNCH WITH LEFT [2]");
+    delaySpeak("PUNCH WITH RIGHT [1] PUNCH WITH LEFT [2]");
     cout << "Choose (1-2): ";
 
     int choice = readChoice();
@@ -520,6 +520,7 @@ void street_fight()
     else
     {
         Tactical_Efficiency_Score += 2;
+        Blazer_Impression_Score += 1;
         public_reputation += 1;
         delaySpeak("//------Knocks Orsange ski to ground--------//");
         delaySpeak("//------Mecha Man Gets punched by Red Ski and falls down--------//");
@@ -539,23 +540,55 @@ void street_fight()
 void bar_flambae()
 {
     delaySpeak("//------Bar scene--------//");
-    typeLine("Where the dialogue at");
-    cout << "1) Throw water\n";
-    cout << "2) Throw alcohol\n";
+    typeLine("Blonde Blazer: I gotta say blazer that does sound intriguing-");
+    typeLine("Mecha Man: That's actually-");
+    delaySpeak("//------Spits drink on Blazer--------//");
+    typeLine("Blonde Blazer: Not water...");
+    typeLine("Mecha Man: This is like pure alcohol?!");
+    typeLine("Blonde Blazer: Well it is actually *Wipes face");
+    typeLine("Mecha Man: You drink hard liquor from a pint glass?");
+    typeLine("Blonde Blazer: I actually drink straight from the glass");
+    typeLine("Blonde Blazer: I'm gonna go clean up");
+    typeLine("Mecha Man: I'm so sorry");
+    typeLine("Blonde Blazer: I will be right back");
+    delaySpeak("//------Blazer stands up and goes to the rest room--------//");
+    delaySpeak("//------A guy screams from across the room--------//");
+    typeLine("Flambae: [Distant scream] Hey! Bitch!");
+    delaySpeak("//------Mechaman looks--------//");
+    typeLine("Flambae: I'm talking to you bitch!");
+    typeLine("Mecha Man: I turned around because someone screamed, not cause I'm a bitch or anything");
+    typeLine("Flambae: Last time i checked this is a bar for superheroes");
+    typeLine("Mecha Man: No way! Is that your Superpower? telling people obvious shit?");
+    delaySpeak("//-------Coupe snickers--------//");
+    typeLine("Mecha Man:  Are you the villain i just fucked up, a couple of years ago?");
+    typeLine("Flambae: I am not a villain, I am flambae, a suprehero.");
+    typeLine("Flambae: Now Mecha Dick get the fuck out of here cause you're not a superhero anymore");
+    typeLine("Flambae: We can do this the easy way or the hard w-");
+    delaySpeak("THROW WATER [1] THROW ALCOHOL [2]");
     cout << "Choose (1-2): ";
-
     int choice = readChoice();
 
     if (choice == 1)
     {
-        Blazer_Impression_Score += 1;
-        cout << "\nYou throw water. The flames die safely.\n";
+        Blazer_Impression_Score += 3;
+        public_reputation -= 1;
+        delaySpeak("//-----Throws water on Flambae--------//");
+        delaySpeak("//-----Flames gets put out--------//");
+        typeLine("Mecha Man:  There, easy way");
+        delaySpeak("//-----Flambae visibly gets irritated--------//");
+        typeLine("Mecha Man: Are you gonna punch me now?");
+        delaySpeak("//-----Flambae rushes towards Mecha man--------//");
+        typeLine("Flambae: Raaa!");
+        delaySpeak("//-----Slides on water and brakes teeth on the Bar counter--------//");
     }
     else
     {
         Blazer_Impression_Score += 3;
-        public_reputation += 2;
-        cout << "\nYou throw alcohol — the flames roar dramatically.\n";
+        public_reputation -= 2;
+        delaySpeak("//-----Throws alcohol on Flambae--------//");
+        delaySpeak("//-----Flambaes hair catches on fire--------//");
+        typeLine("Mecha Man:  Sorry, Which  way was that?");
+        delaySpeak("//-----Flambae runs outside while burning--------//");
     }
 }
 
