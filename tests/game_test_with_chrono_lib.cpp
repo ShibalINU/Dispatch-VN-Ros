@@ -7,10 +7,10 @@ using namespace std;
 
 // -------------------- Prototype --------------------
 void Apartment_Interrogation_Scene();
+void scene_combat_toxic();
 void scene_street_fight();
 void scene_bar_flambae();
 void scene_billboard();
-void scene_combat_toxic();
 void epilogue_summary();
 
 // -------------------- Global State --------------------
@@ -54,10 +54,10 @@ int main()
     cout << "------------------------------------\n";
 
     Apartment_Interrogation_Scene();
+    scene_combat_toxic();
     scene_street_fight();
     scene_bar_flambae();
     scene_billboard();
-    scene_combat_toxic();
     epilogue_summary();
     // ----------------------- GAME START --------------------------- //
 
@@ -112,6 +112,44 @@ void Apartment_Interrogation_Scene()
         delaySpeak("//------Pulls back the chair back--------//");
         typeLine("Honestly, it was talking talking to someone about this stuff");
         typeLine("I guess what i'm saying is, I'm really glad i kidnapped you tonight");
+    }
+}
+
+void scene_combat_toxic()
+{
+    delaySpeak("//------Combat toxic scene--------//");
+    typeLine("Wehre the dialogue at");
+    cout << "2) Stomp\n";
+    cout << "Choose (1-2): ";
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        Tactical_Efficiency_Score += 1;
+        if (isMerciful)
+        {
+            cout << "\nYou punt Toxic into safety netting — low harm.\n";
+        }
+        else
+        {
+            cout << "\nYou punt Toxic — flashy but effective.\n";
+        }
+    }
+    else
+    {
+        Tactical_Efficiency_Score += 2;
+        if (!isMerciful)
+        {
+            cout << "\nYou stomp — brutal efficiency.\n";
+            public_reputation += 2;
+        }
+        else
+        {
+            cout << "\nYou stomp, despite your mercy — decisive but uneasy.\n";
+            public_reputation += 1;
+        }
     }
 }
 
@@ -181,44 +219,6 @@ void scene_billboard()
     {
         isRomanticTensionActive = false;
         cout << "\nYou hold back. A gentle tension remains.\n";
-    }
-}
-
-void scene_combat_toxic()
-{
-    delaySpeak("//------Combat toxic scene--------//");
-    typeLine("Wehre the dialogue at");
-    cout << "2) Stomp\n";
-    cout << "Choose (1-2): ";
-
-    int choice;
-    cin >> choice;
-
-    if (choice == 1)
-    {
-        Tactical_Efficiency_Score += 1;
-        if (isMerciful)
-        {
-            cout << "\nYou punt Toxic into safety netting — low harm.\n";
-        }
-        else
-        {
-            cout << "\nYou punt Toxic — flashy but effective.\n";
-        }
-    }
-    else
-    {
-        Tactical_Efficiency_Score += 2;
-        if (!isMerciful)
-        {
-            cout << "\nYou stomp — brutal efficiency.\n";
-            public_reputation += 2;
-        }
-        else
-        {
-            cout << "\nYou stomp, despite your mercy — decisive but uneasy.\n";
-            public_reputation += 1;
-        }
     }
 }
 
