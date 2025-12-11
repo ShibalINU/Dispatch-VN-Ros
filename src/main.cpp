@@ -65,7 +65,7 @@ int main()
     cout << "// ----------------------- MENU --------------------------- //" << endl;
     cout << "1) Play from beginning\n";
     cout << "2) Select scene\n";
-    cout << "Choose (1-2): ";
+    cout << "Select option: ";
     menuChoice = readChoice();
 
     // ----------------------- VARIABLES --------------------------- //
@@ -96,7 +96,6 @@ int main()
         cout << "3) Street Fight\n";
         cout << "4) Bar Scene\n";
         cout << "5) Billboard Scene\n";
-        cout << "6) Epilogue\n";
         cout << "Choose scene: ";
         scene = readChoice();
 
@@ -183,9 +182,6 @@ int main()
             {
                 return 0;
             }
-            break;
-        case 6:
-            epilogue();
             break;
         default:
             cout << "Invalid selection.\n";
@@ -595,65 +591,86 @@ void bar_flambae()
 void billboard()
 {
     delaySpeak("//------Billboard scene--------//");
-    typeLine("Where the dialogue at");
-    cout << "1) Kiss\n";
-    cout << "2) Let the moment pass\n";
-    cout << "Choose (1-2): ";
-
+    typeLine("Robert: What is it?");
+    typeLine("Blonde Blazer: I'm not quite drunk to tell you my origin story just yet.");
+    typeLine("Blode Blazer: But, remind me to tell you someday ");
+    typeLine("Robert: Definetly");
+    delaySpeak("//------Blonde Blazer Looks at Robert intently--------//");
+    delaySpeak("//------Blonde Softly puts touches Roberts' face--------//");
+    typeLine("Blode Blazer: We can work with this.");
+    delaySpeak("KISS HER [1] LET THE MOMENT PASS [2]");
+    cout << "Choose: ";
     int choice = readChoice();
 
     if (choice == 1)
     {
         isRomanticTensionActive = true;
-        Blazer_Impression_Score += 2;
-        cout << "\nYou kiss. Time stops...\n";
+        Blazer_Impression_Score += 3;
+        delaySpeak("//------Robert Stares back--------//");
+        delaySpeak("//------Slowly leans closer Her lips--------//");
+        delaySpeak("//------kisses--------//");
+        typeLine("Blonde Blazer: No. This.... I'm.. I'm sorry if I gave the Wrong impression.");
+        typeLine("Robert: Sorry I totally Misread that-");
+        typeLine("Blonde Blazer: You didn't- I mean, you did.. But I definetly...");
+        typeLine("Blonde Blazer: The way I went about things tonight");
+        typeLine("Blonde Blazer: it was all a little loose. A little unprofessional.");
+        typeLine("Robert: Unprofessional? I don't think it applies to this...");
+        typeLine("Blonde Blazer: I'm actually here on official business.");
     }
     else
     {
         isRomanticTensionActive = false;
-        cout << "\nYou hold back. A gentle tension remains.\n";
+        Blazer_Impression_Score = 0;
+        delaySpeak("//------Robert glances awkwardly--------//");
+        delaySpeak("//-------Blazer pulls away awrkwardly-------//");
+        typeLine("Blonde Blazer: it was all a little loose. A little unprofessional.");
+        typeLine("Robert: Unprofessional? I don't think it applies to this...");
+        typeLine("Blonde Blazer: I'm actually here on official business.");
     }
 }
 
 void epilogue()
 {
     delaySpeak("//-------Epilogue-------//");
-    typeLine("Where the dialogue at");
 
     if (isMerciful)
     {
-        cout << "Path: Compassionate Leadership.\n";
+        typeLine("Path: Compassionate Leadership.");
+        cout << "\n";
     }
     else
     {
-        cout << "Path: Pragmatic Efficiency.\n";
+        typeLine("Path: Pragmatic Efficiency.");
+        cout << "\n";
     }
 
     if (didFailStreetFight)
     {
-        cout << "Your early mistake shaped your tactics.\n\n";
+        typeLine("Your early mistake shaped your tactics.");
+        cout << "\n";
     }
     else
     {
-        cout << "Your strong start built your confidence.\n\n";
+        typeLine("Your strong start built your confidence.");
+        cout << "\n";
     }
 
-    cout << "Blonde Blazer Impression Score: " << Blazer_Impression_Score << "\n";
+    cout << "Blonde Blazer Impression Score: " << Blazer_Impression_Score << endl;
 
     if (Blazer_Impression_Score >= 4 && isRomanticTensionActive)
     {
-        cout << "Outcome: Romance Route unlocked.\n\n";
+        cout << "Outcome: Romance Route unlocked." << endl;
     }
     else if (Blazer_Impression_Score >= 3)
     {
-        cout << "Outcome: Public Legend.\n\n";
+        cout << "Outcome: Public Legend." << endl;
     }
     else
     {
-        cout << "Outcome: Professional Respect.\n\n";
+        cout << "Outcome: Professional Respect." << endl;
     }
 
-    cout << "Public Reputation Score: " << public_reputation << "\n";
+    cout << "Public Reputation Score: " << public_reputation << endl;
 
     cout << "\n--- End of Episode 1 ---\n";
 }
