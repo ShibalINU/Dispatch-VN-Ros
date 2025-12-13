@@ -12,3 +12,6 @@ _If you want to see the progress of the game, you can check the /tests folder se
 ![capsule_616x353](https://github.com/user-attachments/assets/ace81ff9-0f74-4529-949f-ce82737ea69b)
 
 steam: https://store.steampowered.com/app/2592160/Dispatch/
+
+Documentation:
+[CSDC101 Project Documentation.pdf](https://github.com/user-attachments/files/24138399/CSDC101.Project.Documentation.pdf)
